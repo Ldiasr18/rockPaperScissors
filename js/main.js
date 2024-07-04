@@ -57,7 +57,6 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame(){
     let computerChoice, humanChoice;
-    console.log("teste");
     for(let i = 0; i < 5; i++) {
         computerChoice = getComputerChoice();
         humanChoice = getHumanChoice();
