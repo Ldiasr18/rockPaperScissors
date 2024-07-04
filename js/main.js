@@ -30,7 +30,7 @@ function getHumanChoice() {
         return "Scissors";
     } else {
         //function to check the human choice, and if it's invalid asks to enter again the value.
-            console.log("choice is invalid \n please enter a valid choice: Rock, paper or scissors");
+            alert("choice is invalid \n please enter a valid choice: Rock, paper or scissors");
             //to do:
             //make an exit value if the player do not want to play anymore 
         }
@@ -39,18 +39,19 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("It's a draw!");
+        alert("It's a draw!");
+        draw++;
     } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        console.log("You WIN! Rock beats Scissors!");
+        alert("You WIN! Rock beats Scissors!");
         humanScore++;
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        console.log("You WIN! Paper beats rock!");
+        alert("You WIN! Paper beats rock!");
         humanScore++;
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        console.log("You WIN! Scissors beats paper!");
+        alert("You WIN! Scissors beats paper!");
         humanScore++;
     } else {
-        console.log(`You LOSE! ${computerChoice} beats ${humanChoice}!`);
+        alert(`You LOSE! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
     }
 }
@@ -61,14 +62,18 @@ function playGame(){
         computerChoice = getComputerChoice();
         humanChoice = getHumanChoice();
         playRound(humanChoice, computerChoice);
-        console.log(`Score:
+        alert(`Score:
             Player: ${humanScore}
-            Computer: ${computerScore}`);
+            Computer: ${computerScore}
+            draws: ${draw}`);
+            
     }
     if(humanScore > computerScore){
-        console.log("you won The game!");
+        alert("You won the game");
+    }else if(humanScore == computerScore){
+        alert("It's a draw!");
     }else{
-        console.log("Computer won the game!")
+        alert("The computer won the game!");
     }
 }
 
@@ -76,5 +81,5 @@ function playGame(){
 
 //main
 
-let computerScore = 0, humanScore = 0;
+let computerScore = 0, humanScore = 0, draw = 0;
 playGame();
