@@ -31,13 +31,19 @@ function getHumanChoice(){
 
 let computerChoice, humanChoice;
 console.log("hello world!")
+//functions to get choices
 computerChoice = getComputerChoice();
-
 humanChoice = getHumanChoice();
+
+//function to check the human choice, and if it's invalid asks to enter again the value.
 while (humanChoice == -1){
     console.log("choice is invalid \n please enter a valid choice: Rock, paper or scissors");
     humanChoice = getHumanChoice();
+//to do:
+//make an exit value if the player do not want to play anymore 
 }
+
+
 console.log(computerChoice);
 console.log(humanChoice);
 
