@@ -20,6 +20,7 @@ function getHumanChoice() {
     let playerChoice;
     playerChoice = prompt("Enter your choice: Rock, Paper or Scissors");
     //make sure the choice is valid and standardize the return
+    playerChoice = playerChoice.trim();
     playerChoice = playerChoice.toLowerCase();
     if (playerChoice === "rock") {
         return "Rock";
@@ -30,7 +31,7 @@ function getHumanChoice() {
         return "Scissors";
     } else {
         //function to check the human choice, and if it's invalid asks to enter again the value.
-            alert("choice is invalid \n please enter a valid choice: Rock, paper or scissors");
+            alert("choice is invalid \n please enter a valid choice: Rock, Paper or Scissors");
             //to do:
             //make an exit value if the player do not want to play anymore 
         }
@@ -45,10 +46,10 @@ function playRound(humanChoice, computerChoice) {
         alert("You WIN! Rock beats Scissors!");
         humanScore++;
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        alert("You WIN! Paper beats rock!");
+        alert("You WIN! Paper beats Rock!");
         humanScore++;
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        alert("You WIN! Scissors beats paper!");
+        alert("You WIN! Scissors beats Paper!");
         humanScore++;
     } else {
         alert(`You LOSE! ${computerChoice} beats ${humanChoice}!`);
@@ -65,7 +66,7 @@ function playGame(){
         alert(`Score:
             Player: ${humanScore}
             Computer: ${computerScore}
-            draws: ${draw}`);
+            Draws: ${draw}`);
             
     }
     if(humanScore > computerScore){
