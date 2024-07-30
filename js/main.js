@@ -15,7 +15,7 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    const playerChoice = document.querySelectorAll('button');
+    const playerChoice = document.querySelectorAll("button");
     playerChoice.forEach((button) => {
         button.addEventListener("click", () => {
             let humanChoice = button.id;
@@ -25,28 +25,49 @@ function playGame() {
     });
 }
 
-//todo function to change scores?
-
 function playRound(humanChoice, computerChoice) {
-    let humanScore =0, computerScore = 0;
+    let winner = " ";
+
     if (humanChoice === computerChoice) {
         alert("It's a draw!");
-        //no caso seria aqui chamar aqui a função pra atualizar
-        draw++;
     } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
         alert("You WIN! Rock beats Scissors!");
-        humanScore++;
+        winner = "human";
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
         alert("You WIN! Paper beats Rock!");
-        humanScore++;
+        winner ="human";
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
         alert("You WIN! Scissors beats Paper!");
-        humanScore++;
+        winner = "human";
     } else {
         alert(`You LOSE! ${computerChoice} beats ${humanChoice}!`);
-        computerScore++;
+        winner = "computer";
     }
+    addScore(winner);
 }
  
+function addScore(winner){
+    alert(winner);
+    const humanScore = document.getElementById("humanScore");
+    const computerScore = document.getElementById("computerScore");
+    const drawScore = document.getElementById("drawScore"); 
+
+    switch(winner){
+        case "human":
+            humanScore.innerText = String(parseInt(humanScore.innerText) + 1);
+            break;
+        case "computer":
+            computerScore.innerText = String(parseInt(computerScore.innerText) + 1);
+            break;
+        default:
+            drawScore.innerText = String(parseInt(drawScore.innerText) + 1);
+            break;
+        }
+
+
+}
+
 
 playGame();
+
+
