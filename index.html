@@ -5,25 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/main.js" defer></script>
+    <link rel="styleSheet" href="./css/style.css">
     <title>RockPaperScissors</title>
 </head>
 
-<body style  = "background-color: gray">
-    <div class="Choices">
-        <h2>Choose an option: </h2>
-        <button id="Rock">Rock</button>
-        <button id="Paper">Paper</button>
-        <button id="Scissors">Scissors</button>
-    </div>
-    <div class="Score">
-        <p>
-            Score:
+<body>
+    <div class="container">
+        <div class="choices">
+            <h2>Choose an option: </h2>
+            <div class="buttons">
+                <button id="Rock">Rock</button>
+                <button id="Paper">Paper</button>
+                <button id="Scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="score">
+            <p>
+                Score:
             <ul style="list-style-type: none;">
                 <li>Player: <span id="humanScore">0</span></li>
                 <li>Computer: <span id="computerScore">0</span></li>
                 <li>Draw: <span id="drawScore">0</span></li>
             </ul>
-        </p>
+            </p>
+        </div>
     </div>
 </body>
 

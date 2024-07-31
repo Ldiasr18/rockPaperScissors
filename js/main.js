@@ -69,8 +69,6 @@ function resetGame(){
   
 }
 
-
-
 playGame();
 
 
